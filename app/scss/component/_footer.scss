@@ -1,0 +1,188 @@
+@use '../utility/variables' as vars;
+.footer {
+    padding-top: 70px;
+    padding-bottom: 60px;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: 90px;
+    }
+
+    &__line {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 1140px;
+            height: 2px;
+            background-color: vars.$basis;
+            z-index: 1;
+        }
+    }
+
+    &__logo-link {
+        display: flex;
+        margin-bottom: 28px;
+    }
+
+    &__contact-list {
+        display: flex;
+        gap: 8px;
+        list-style-type: none;
+        flex-direction: column;
+        margin-bottom: 8px;
+    }
+
+    &__contact-phone,
+    &__contact-email {
+        color: vars.$white;
+        font-size: 14px;
+        line-height: 1.6em;
+        font-weight: 400;
+        text-decoration: none;
+        transition: color vars.$transition;
+    }
+
+    &__contact-phone:hover,
+    &__contact-phone:focus,
+    &__contact-email:hover,
+    &__contact-email:focus {
+        color: vars.$hover-efect;
+    }
+
+    &__contact-email {
+        text-decoration: underline;
+    }
+
+    &__address-title,
+    &__address-details {
+        color: vars.$white;
+        font-size: 14px;
+        line-height: 1.6em;
+        font-weight: 400;
+    }
+
+    &__address-title {
+        margin-bottom: 8px;
+    }
+
+    &__address-details {
+        width: 260px;
+        margin-bottom: 20px;
+    }
+
+    &__social-icons {
+        display: flex;
+        list-style-type: none;
+        gap: 8px;
+    }
+
+    &__social-card-instagram,
+    &__social-card-facebook,
+    &__social-card-telegram {
+        padding: 10px;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+
+        svg {
+            color: vars.$white;
+        }
+    }
+
+    &__social-card-instagram {
+        background: linear-gradient(
+            0deg,
+            #e09b3d 0%,
+            #c74c4d 24%,
+            #c21975 65%,
+            #7024c4 100%
+        );
+    }
+
+    &__social-card-facebook {
+        background-color: rgb(49, 49, 252);
+    }
+
+    &__social-card-telegram {
+        background-color: rgb(0, 128, 255);
+    }
+
+    &__section-title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1.4em;
+        color: vars.$white;
+        margin-bottom: 14px;
+    }
+
+    &__section-list {
+        list-style-type: none;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.6em;
+        text-decoration: underline;
+    }
+
+    &__section-link {
+        color: #85899c;
+        transition: color vars.$transition;
+
+        &:hover,
+        &:focus {
+            color: vars.$basis;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        &__line {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+    
+            &::before {
+                content: "";
+                position: absolute;
+                width: 335px;
+                height: 2px;
+                background-color: vars.$basis;
+                z-index: 1;
+            }
+        }
+        &__logo-link {
+            display: flex;
+            margin-bottom: 28px;
+            justify-content: center;
+        }
+        &__contact-list {
+            display: flex;
+            align-items: center;
+        }
+        &__address-title,
+        &__address-details {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        &__social-icons {
+            display: flex;
+            justify-content: center;
+        }
+        &__section {
+            display: none;
+        }
+    }
+}

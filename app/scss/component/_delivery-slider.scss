@@ -1,0 +1,183 @@
+@use '../utility/variables' as vars;
+.delivery {
+    position: relative;
+    &__title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 1.2em;
+        color: vars.$white;
+        margin-bottom: 24px;
+        text-transform: uppercase;
+    }
+
+    &__line {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 85px;
+            height: 2px;
+            background-color: vars.$hover-efect;
+            z-index: 1;
+        }
+    }
+
+    &__img {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    &__category {
+        background-color: vars.$background-2;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding: 27px 20px;
+    }
+
+    &__subtitle {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: vars.$white;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 11px;
+    }
+
+    &__info-list {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 14px;
+    }
+
+    &__info-item {
+        list-style-type: none;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.2;
+        color: vars.$white;
+    }
+
+    &__prise {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        line-height: 1.2em;
+        color: vars.$white;
+        margin-bottom: 20px;
+        align-items: baseline;
+        gap: 5px;
+
+        .part-1 {
+            font-weight: 300;
+        }
+
+        .part-2 {
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .part-3 {
+            font-weight: 500;
+        }
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+
+        .but-app {
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.4em;
+            color: vars.$white;
+            border: none;
+            border-radius: 90px;
+            padding: 14px 18px;
+            background-color: vars.$basis;
+            text-align: center;
+            transition: background-color vars.$transition;
+
+            &:hover,
+            &:focus {
+                background-color: vars.$hover-efect;
+            }
+        }
+
+        .but-info {
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.4em;
+            color: vars.$white;
+            border: 1px solid vars.$basis;
+            border-radius: 90px;
+            padding: 14px 18px;
+            background-color: vars.$background-2;
+            text-align: center;
+            transition: background-color vars.$transition, border $transition;
+
+            &:hover,
+            &:focus {
+                background-color: vars.$hover-efect;
+                border: 1px solid vars.$hover-efect;
+            }
+        }
+    }
+}
+.swiper-button-prev-delivery,
+.swiper-button-next-delivery {
+    position: absolute;
+    top: 50%; /* Центрування по вертикалі */
+    transform: translateY(-50%);
+    z-index: 10; /* Щоб стрілки були над іншими елементами */
+    width: 40px; /* Розмір стрілок */
+    height: 40px;
+}
+
+/* Ліва стрілка за межами контейнера */
+.swiper-button-prev-delivery {
+    left: 0% !important;
+    top: 62% !important;
+}
+
+/* Права стрілка за межами контейнера */
+.swiper-button-next-delivery {
+    right: 0% !important;
+    top: 62% !important;
+}
+
+
+@media (max-width: 768px) {
+    .swiper-button-next-delivery,
+    .swiper-button-prev-delivery {
+      display: none !important; /* Ховаємо стрілки */
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper-button-next-delivery,
+  .swiper-button-prev-delivery {
+    display: none !important; /* Ховаємо стрілки */
+  }
+    .delivery {
+        &__title {
+            font-size: 24px;
+            margin-bottom: 22px;
+        }
+        &__line {
+            margin-bottom: 32px;
+        }
+    }
+}

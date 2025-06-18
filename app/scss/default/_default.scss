@@ -1,0 +1,47 @@
+@use '../utility/variables' as vars;
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1180px;
+}
+*{
+    padding: 0;
+    margin: 0;
+
+}
+html {
+    scroll-behavior: smooth;
+    
+}
+::selection {
+    background-color: vars.$hover-efect; /* Колір фону виділення */
+    
+}
+body{
+    background-color: vars.$background;
+    font-family: Promt, sans-serif;
+}
+img {
+    display: block;
+}
+.top-bottom-retreat {
+    padding-top: 97px;
+    padding-bottom: 100px;
+}
+
+.bottom-retreat {
+    padding-bottom: 98px;
+}
+
+@media (max-width: 480px) {
+    .top-bottom-retreat {
+        padding-top: 54px;
+        padding-bottom: 60px;
+    }
+    
+    .bottom-retreat {
+        padding-bottom: 60px;
+    }
+}

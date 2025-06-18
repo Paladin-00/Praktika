@@ -1,0 +1,184 @@
+@use '../utility/variables' as vars;
+.cooperation {
+    display: flex;
+    justify-content: center;
+    background-color: vars.$background-2;
+
+    &__line {
+        position: relative; // Додано для псевдоелемента
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 85px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 85px;
+            height: 2px;
+            background-color: vars.$hover-efect; // Колір лінії
+            z-index: 1;
+        }
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        color: vars.$white;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.2em;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        display: flex;
+        justify-content: center;
+        color: vars.$white;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1.2em;
+        margin-bottom: 30px;
+    }
+
+    &__content {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 70px;
+        flex-direction: row-reverse;
+
+        img {
+            border-radius: 20px;
+        }
+    }
+
+    &__instructions {
+        display: block;
+        width: 100%;
+    }
+
+    &__text {
+        margin-bottom: 30px;
+        font-size: 17px;
+        line-height: 1.5em;
+        font-weight: 300;
+        color: vars.$white;
+    }
+
+    &__form {
+        width: 100%;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 30px;
+
+        img {
+            border-radius: 20px;
+        }
+    }
+
+    &__note {
+        margin-bottom: 30px;
+        font-size: 17px;
+        line-height: 1.5em;
+        font-weight: 300;
+        color: vars.$white;
+    }
+
+    &__button {
+        display: flex;
+        width: 300px;
+        align-items: center;
+        background-color: vars.$basis;
+        padding: 23px 21px 22px 33px;
+        border: none;
+        color: vars.$white;
+        border-radius: 90px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.4em;
+        cursor: pointer;
+        transition: background-color vars.$transition;
+
+        svg {
+            transition: color vars.$transition;
+            margin-left: auto;
+            color: vars.$orang;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: vars.$hover-efect;
+
+            svg {
+                color: vars.$white;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .cooperation {
+        display: flex;
+        justify-content: center;
+        &__content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 70px;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__actions {
+            display: flex;
+            gap: 30px;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__button {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .cooperation {
+        &__title {
+            text-align: center;
+            font-size: 24px;
+        }
+        &__subtitle {
+            font-size: 18px;
+            margin-bottom: 18px;
+        }
+        &__line {
+            margin-bottom: 43px;
+        }
+        &__content {
+            
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        &__instructions {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img {
+                
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    
+}

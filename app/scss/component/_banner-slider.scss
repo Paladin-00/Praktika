@@ -1,0 +1,130 @@
+@use '../utility/variables' as vars;
+.swiper__slide-content {
+    max-height: 700px ;
+    // height: 100%;
+    
+}
+.banner-wrapper {
+    display: flex !important;
+    gap: 0 !important;
+}
+
+.swiper__slide-title {
+    text-align: left;
+    width: 446px;
+    margin-bottom: 8px;
+
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2em;
+    color: vars.$white;
+}
+
+.swiper__slide-text {
+    text-align: left;
+    font-size: 20px;
+    width: 350px;
+
+    line-height: 1.3em;
+    font-weight: 300;
+    margin-bottom: 37px;
+    color: $white;
+}
+
+.swiper__slide-button {
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: vars.$basis;
+    padding: 14px 27px;
+    border-radius: 90px;
+    color: vars.$white;
+    gap: 25px;
+    border: none;
+    transition: background-color vars.$transition;
+
+    svg {
+        transition: color vars.$transition;
+        color: vars.$orang;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: vars.$hover-efect;
+
+        svg {
+            color: vars.$white;
+        }
+    }
+}
+.slide-info {
+    padding-top: 163px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+}
+
+.background_img-1{
+    background-image: url("../images/dostavks\ 1.jpg");
+    background-position: center center;
+    background-size: cover;
+    border-radius: 20px;
+    // background: linear-gradient(90deg, rgba(4, 5, 17, 0.91) 0%, rgba(88, 88, 88, 0) 100%);
+}
+.background_img-2{
+    background-image: url("../images/dostavks\ 2.jpg");
+    background-position: center center;
+    background-size: cover;
+    border-radius: 20px;
+    // background: linear-gradient(90deg, rgba(4, 5, 17, 0.91) 0%, rgba(88, 88, 88, 0) 100%);
+}
+.background_img-3{
+    background-image: url("../images/dostavks\ 3.jpg");
+    background-position: center center;
+    background-size: cover;
+    border-radius: 20px;
+    // background: linear-gradient(90deg, rgba(4, 5, 17, 0.91) 0%, rgba(88, 88, 88, 0) 100%);
+}
+.background_img-4{
+    background-image: url("../images/dostavks\ 4.jpg");
+    background-position: center center;
+    background-size: cover;
+    border-radius: 20px;
+    // background: linear-gradient(90deg, rgba(4, 5, 17, 0.91) 0%, rgba(88, 88, 88, 0) 100%);
+}
+
+@media (max-width: 480px) {
+    .slide-info {
+        padding: 50% 0;
+        padding-left: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .swiper__slide-title {
+        text-align: center;
+        font-size: 32px;
+        width: 355px;
+    }
+    .swiper__slide-text {
+        text-align: center;
+        font-size: 16px;
+        width: 250px;
+    }
+    .swiper-button-prev-banners,
+    .swiper-button-next-banners {
+        display: none !important;
+    }
+    .swiper__slide-content {
+        background: linear-gradient(0deg, rgba(4, 5, 17, 0.91) 0%, rgba(88, 88, 88, 0) 100%);
+    }
+    .background_img-1,
+    .background_img-2,
+    .background_img-3,
+    .background_img-4 {
+        border-radius: 0;
+    }
+}
+
+
+

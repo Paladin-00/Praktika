@@ -1,0 +1,51 @@
+@use '../utility/variables' as vars;
+.swiper-pagination .swiper-pagination-bullet {
+    background: none;
+    opacity: 1;
+    border: 2px vars.$white solid;
+    margin-left: 13px !important;
+    margin-right: 13px !important;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+    background-color: vars.$white; /* Колір активної точки */
+}
+
+/* Зміна кольору стрілок навігації */
+.swiper-button-next-banners, .swiper-button-prev-banners,
+.swiper-button-next, .swiper-button-prev {
+    color: vars.$white !important; /* Колір стрілок */
+    opacity: 1;
+    transition: color 0.3s ease;
+}
+ /* Ефект наведення миші */
+.swiper-button-next-banners:hover,
+.swiper-button-prev-banners:hover,
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: vars.$hover-efect !important; /* Зміна кольору (вкажіть потрібний) */
+}
+
+/* Фокус стрілок (клавіатура) */
+.swiper-button-next-banners:focus,
+.swiper-button-prev-banners:focus,
+.swiper-button-next:focus,
+.swiper-button-prev:focus {
+    color: vars.$hover-efect !important; 
+}
+.swiper {
+    width: auto;
+}
+.swiper-img {
+    border-radius: 10px;
+}
+.swiper-slide {
+    position: relative;
+    font-size: 24px;
+    text-align: center;
+    height: 300px;
+    box-sizing: border-box;
+    img{
+        width: 100%;
+    }
+}

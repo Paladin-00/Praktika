@@ -1,0 +1,186 @@
+@use '../utility/variables' as vars;
+.header {
+    display: flex;
+    align-items: center;
+    
+    .container {
+        position: relative;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        width: 100%;
+    }
+    &__button {
+        margin-left: auto;
+        border: none;
+        border-radius: 90px;
+        font-size: 15px;
+        padding: 14px 27px;
+        background-color: vars.$basis;
+        color: vars.$white;
+        cursor: pointer;
+        transition: background-color vars.$transition;
+
+        &:hover,
+        &:focus {
+            background-color: vars.$hover-efect;
+        }
+    }
+
+    &__nav {
+        margin-left:  96px;
+        
+    }
+
+    &__list {
+        gap: 40px;
+        flex-direction: row;
+        display: flex;
+        list-style-type: none;
+    }
+
+    &__link {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.4em;
+        text-decoration: none;
+        color: vars.$white;
+        // position: relative;
+        transition: color vars.$transition;
+
+        &:hover,
+        &:focus {
+            color: vars.$hover-efect;
+        }
+    }
+    
+    &__burger {
+        display: none;
+        border: none;
+        background: none;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .header {
+        .container {
+            display: flex;
+            width: 100%;
+        }
+        &__burger-main {
+            display: flex;
+            
+        }
+        &__burger {
+            display: block;
+            margin-left: auto;
+        }
+        &__nav {
+            display: none;
+        }
+        &__button {
+            display: none;
+        }
+    }
+}
+
+
+/* Загальний стиль для модального вікна */
+.modal {
+    position: fixed;
+    top: -100%; /* Початково ховаємо модалку за межами екрана */
+    left: 0;
+    width: 100%;
+    background-color: vars.$background-2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease;
+    
+    display: flex;
+    justify-content: center;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 37px 40px 60px 40px;
+        width: 100%;
+        align-items: center;
+    }
+    &__item {
+        text-align: center;
+        margin-bottom: 34px;
+    }
+    &__list {
+        margin-bottom: 34px;
+        list-style-type: none;
+    }
+
+    &__link {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.2em;
+        text-decoration: none;
+        color: vars.$white;
+        transition: color vars.$transition;
+
+        &:hover,
+        &:focus {
+            color: vars.$hover-efect;
+        }
+    }
+    &__button {
+        display: flex;
+        align-items: center;
+        border: none;
+        border-radius: 90px;
+        font-size: 15px;
+        padding: 14px 27px;
+        background-color: vars.$basis;
+        color: vars.$white;
+        cursor: pointer;
+        width: 400px;
+        transition: background-color vars.$transition;
+
+        svg {
+            margin-left: auto;
+            transition: color vars.$transition;
+            color: vars.$orang;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: vars.$hover-efect;
+
+            svg {
+                color: vars.$white;
+            }
+        }
+    }
+}
+
+
+.modal.show {
+    top: 98px;
+}
+
+.header__burger {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 480px) {
+    .modal {
+        &__content {
+            align-items: none;
+        }
+        &__button {
+            width: 100%;
+        }
+    }
+}

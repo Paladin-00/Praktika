@@ -1,0 +1,318 @@
+@use '../utility/variables' as vars;
+.company {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+    img {
+        width: 100%;
+        height: auto;
+    }
+    &__info {
+        
+    }
+
+    &__title {
+        line-height: 1.2em;
+        font-size: 36px;
+        font-weight: 700;
+        color: vars.$white;
+        margin-bottom: 24px;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 1.7em;
+        font-weight: 300;
+        color: vars.$white;
+    }
+
+    &__line {
+        position: relative; // Додано для псевдоелемента
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 44px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 85px;
+            height: 2px;
+            background-color: vars.$hover-efect; // Колір лінії
+            z-index: 1;
+        }
+    }
+}
+
+.drop {
+    &__question {
+        p {
+            font-size: 18px;
+            line-height: 1.7em;
+            font-weight: 300;
+            color: vars.$white;
+        }
+    }
+
+    &__question-title {
+        line-height: 1.2em;
+        font-size: 36px;
+        font-weight: 700;
+        color: vars.$white;
+        margin-bottom: 24px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__question-line {
+        position: relative; // Додано для псевдоелемента
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 85px;
+            height: 2px;
+            background-color: vars.$basis; // Колір лінії
+            z-index: 1;
+        }
+    }
+}
+.faq-container {
+    display: flex;
+    width: 100%;
+}
+
+.faq-section {
+    flex: 2;
+    margin-right: 34px;
+}
+
+.faq-item {
+    background-color: vars.$background;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    border: 1px vars.$border solid;
+    overflow: hidden;
+    cursor: pointer;
+    max-width: 716px;
+    transition: all 0.3s ease;
+}
+
+.faq-item.expanded {
+    border-color: vars.$white;
+    background-color: vars.$border; /* Змінений колір для активного стану */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.faq-question {
+    padding: 21px 19px 21px 34px;
+    border-color: vars.$white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    P {
+        color: vars.$white;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    /* line-height: 1.2em; */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    svg{
+        transition: transform 0.3s ease, color 0.3s ease;
+        color: vars.$white;
+    }
+}
+
+.faq-item.expanded .faq-question {
+    background-color: vars.$white;
+    p {
+        color: vars.$black; 
+    }
+    svg{
+        transform: rotate(-90deg);
+        color: vars.$basis;
+    }
+}
+
+.faq-answer {
+    background-color: vars.$white;
+    padding: 0 19px 21px 34px;
+    font-size: 16px;
+    color: vars.$black;
+    display: none;
+}
+
+.faq-item.expanded .faq-answer {
+    display: block;
+}
+
+
+
+.contact {
+    flex: 1;
+    background-color: vars.$background-2;
+    padding: 38px 40px;
+    border-radius: 20px;
+    box-shadow: 5px 15px 40px rgba(11.40, 24.06, 97.75, 0.32);
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        color: vars.$white;
+        margin-bottom: 8px;
+    }
+
+    &__text {
+        font-size: 17px;
+        font-weight: 300;
+        margin-bottom: 23px;
+    }
+
+    &__form {}
+
+    .form {
+        &__input, &__textarea {
+            width: 100%;
+            padding: 18px 20px 19px;
+            margin-bottom: 14px;
+            background-color: vars.$white;
+            border: none;
+            color: vars.$input;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 300;
+            transition: box-shadow vars.$transition;
+
+            &:focus-visible {
+                outline: none;
+            }
+
+            &:hover {
+                box-shadow: 0px 0px 4px 2px vars.$basis;
+            }
+
+            &:focus {
+                box-shadow: 0px 0px 4px 2px vars.$hover-efect;
+            }
+        }
+
+        &__textarea {
+            margin-bottom: 26px;
+        }
+
+        &__button {
+            width: 100%;
+            padding: 23px 33px 22px;
+            background-color: vars.$basis;
+            border: none;
+            color: vars.$white;
+            font-size: 18px;
+            border-radius: 90px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: background-color vars.$transition;
+
+            svg {
+                margin-left: auto;
+                color: vars.$orang;
+                transition: color vars.$transition;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: vars.$hover-efect;
+
+                svg {
+                    color: vars.$white;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .company {
+        justify-content: center;
+        flex-direction: column;
+        &__info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        &__line {
+            margin-bottom: 25px;
+            left: -8%;
+        }
+        &__text {
+            width: 100%;
+            font-size: 16px;
+        }
+        &__title {
+            font-size: 24px;
+            margin-bottom: 22px;
+        }
+        
+    }
+    .faq-container {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+    .faq-section {
+        margin-right: 0;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+    .drop {
+        &__question {
+            p {
+                font-size: 16px;
+            }
+        }
+    
+        &__question-title {
+            font-size: 24px;
+            margin-bottom: 22px;
+        }
+    
+        &__question-line {
+            margin-bottom: 27px;
+        }
+    }
+
+    .faq-question {
+        
+        p {
+            width: 250px;
+            font-size: 16px;
+        }
+        svg{
+            margin-left: auto;
+        }
+    }
+    .faq-answer {
+        font-size: 14px;
+    }
+    .contact {
+    
+        &__title {
+            text-align: center;
+        }
+    
+        &__text {
+            text-align: center;
+        }
+    }
+}
